@@ -54,7 +54,3 @@ Make a hypothesis about the number of concurrent requests to mock resources for 
 What are the implications of the data you collected in these tests?
   * From the web client's perspective, which endpoint is faster?
   * What would happen is MockResource was your database? What if `MockResource` was a resource that could only handle limited load?
-
-## 4.) (Hard Mode) How slow can you go
-
-Make the requests to the endpoints fail and return a 500 if there are already 15 concurrent requests to the `MockResource`
