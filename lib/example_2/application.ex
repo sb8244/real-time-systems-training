@@ -13,9 +13,9 @@ defmodule Example2.Application do
       {TelemetryMetricsStatsd,
        port: 8126,
        metrics: [
-         sum([:example, :foo, :data_val_1]),
-         counter([:example, :foo, :data_val_1]),
-         sum([:example, :foo, :data_val_2], tags: [:metadata_key]),
+         counter("example.foo.count"),
+         sum("example.foo.data_val_1"),
+         sum("example.foo.data_val_2", tags: [:metadata_key])
        ]}
     ]
 
@@ -36,7 +36,7 @@ defmodule Example2.Application do
         "simple-event",
         [:example, :simple],
         &ExampleMetricsHandler.handle_simple/4,
-        %{my_config: :baz}
+        %{}
       )
   end
 end

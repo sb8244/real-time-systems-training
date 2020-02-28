@@ -17,7 +17,7 @@ In this section you will be exploring metrics collection via telemetry.
 
 (Telemetry Documentation)[https://github.com/beam-telemetry/telemetry]
 
-Open the console and produce an event using the following command
+Open the console with `iex -S mix` and produce an event using the following command
 
 ```
 Example2.Metrics.ExampleMetricsProducer.emit_simple()
@@ -34,12 +34,12 @@ Try to do the following based on the telemetry documentation
 
 Familiarize yourself with the event being emitted by `Example2.Metrics.ExampleMetricsProducer.example_event()`
 
-Try to add the following stats to the statsd collector being started in `application.ex`. Checkout the docs for `Telemetry.Metrics`
-for how to do so:
+Try to add the following stats to the statsd collector being started in `application.ex`. Checkout the docs for `TelemetryMetricsStatsd`
+for how to do so (https://github.com/beam-telemetry/telemetry_metrics_statsd):
 
   * The number of occurrences of the `[:example, :foo]` event
   * The sum of the values of `data_val_1`
-  * The sum of the values of `data_val_2` partitioned by the value of `:metadata_key`
+  * The sum of the values of `data_val_2` partitioned (tagged) by the value of `:metadata_key`
 
 ### 3. (Hard Mode) Create a metric that polls your BEAM node for memory stats
 
@@ -49,4 +49,4 @@ that chirps memory stats every second or so.
 ### 4. (Hard Mode) Put Metrics on all the Phoenix telemetry events
 
 Find the telemetry events that Phoenix allows (you can do this without using the internet!), and then add metrics for
-each.
+each. Try starting with `grep -R telemetry.execute deps/phoenix` to find the telemetry events.
