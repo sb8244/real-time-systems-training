@@ -18,7 +18,6 @@ defmodule Example2Web.FeedChannel do
     {:error, %{reason: "unauthorized"}}
   end
 
-  # TODO: Use the Tracker when a Channel is joined
   def handle_info({:after_join, name}, socket) do
     {:ok, _} = FeedTracker.track(socket, name)
     {:noreply, socket}

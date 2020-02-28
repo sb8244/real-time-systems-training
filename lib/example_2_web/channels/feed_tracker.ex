@@ -37,7 +37,6 @@ defmodule Example2Web.FeedTracker do
   end
 
   def handle_diff(diff, state) do
-    # TODO: Print the join/leave items together
     IO.inspect {"Diff received", diff, state}
     {:ok, state}
   end
