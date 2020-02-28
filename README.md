@@ -21,6 +21,8 @@ The Tracker is configured for you, but isn't being used. Make it so that the Cha
 after a Channel is joined. Note that there are 2 different feeds. The first is a generic `feed`
 that all users see. The other is `feed:userId` which could be for a given user only.
 
+You'll need to do part 2 at the same time, as `FeedTracker.track/2` expects to receive the name.
+
 ### 2. Track the user's name
 
 It would be really helpful to have the User's name when they join a feed. This information is
