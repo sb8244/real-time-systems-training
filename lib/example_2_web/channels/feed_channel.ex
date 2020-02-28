@@ -44,8 +44,8 @@ defmodule Example2Web.FeedChannel do
         {:ok, activity} ->
           reply(ref, {:ok, activity})
 
-        {:error, _err} ->
-          reply(ref, {:error, %{err: "invalid activity data"}})
+        {:error, e} ->
+          reply(ref, {:error, %{error: inspect(e.errors)}})
       end
     end)
   end
