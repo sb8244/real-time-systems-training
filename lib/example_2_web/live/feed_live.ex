@@ -31,6 +31,7 @@ defmodule Example2Web.FeedLive do
     socket =
       socket
       |> assign(:user_id, user_id)
+
     {:ok, socket}
   end
 
