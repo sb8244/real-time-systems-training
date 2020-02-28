@@ -21,7 +21,7 @@ defmodule Example2Web.FeedLive do
     """
   end
 
-  def mount(%{user_id: user_id}, socket) do
+  def mount(%{"user_id" => user_id}, socket) do
     # We only want to connect the "feed" topic when the LiveView Socket is connected
     if connected?(socket) do
       :ok = Phoenix.PubSub.subscribe(Example2.PubSub, "feed")
@@ -31,6 +31,7 @@ defmodule Example2Web.FeedLive do
     socket =
       socket
       |> assign(:user_id, user_id)
+      |> assign(:activities, [])
 
     {:ok, socket}
   end
