@@ -20,7 +20,8 @@ defmodule Example2Web.FeedChannel do
   #   * Create the Activity using the context API only (don't reach into the database layer directly)
   #   * If successful, return a successful reply with the activity
   #   * If error, reply with some message indicating that there's invalid data. This can be done with
-  #     :error status instead of :ok
+  #     :error status instead of :ok. For simplicity, use the payload `%{error: inspect(e.errors)}` for
+  #     the error response.
   #   * Fix the error that will come up after you do this (due to missing occurred_at). Do this completely
   #     in the Channel by add a valid DateTime to the params map.
 
