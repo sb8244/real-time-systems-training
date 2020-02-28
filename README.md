@@ -19,7 +19,9 @@ and observe the box using `observer_cli`.
 You can easily create a local network of nodes with libcluster. We will start a web server with the
 name `app@127.0.0.1` and an application server (no web) with the name `backend@127.0.0.1`.
 
-Configure `application.ex` with the correct names. Then try to start the nodes:
+Configure `application.ex` with the correct names. The format can be found at https://hexdocs.pm/libcluster/Cluster.Strategy.Epmd.html
+
+Then try to start the nodes:
 
 ```
 $ iex --name app@127.0.0.1 -S mix
@@ -42,6 +44,10 @@ You can use the existing `Mock.ActivityCreator` to create an activity from the b
 a PubSub event. What do you expect to happen when you do this?
 
 ```
+# The app server is started with phx.server
+$ iex --name app@127.0.0.1 -S mix phx.server
+
+# The backend server won't serve web requests
 $ iex --name backend@127.0.0.1 -S mix
 iex(backend@127.0.0.1)1> Node.list
 [:"app@127.0.0.1"]
