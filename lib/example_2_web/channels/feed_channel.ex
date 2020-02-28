@@ -31,7 +31,7 @@ defmodule Example2Web.FeedChannel do
     end
   end
 
-  # TODO (2b): You will see an error in your GenServer once you start sending yourself a message. Implement a
+  # TODO (2b): You will see a warning in your GenServer once you start sending yourself a message. Implement a
   # handle_info here in order to remove the rate limiting from the socket.
 
   defp all_activities(params) do
@@ -40,10 +40,9 @@ defmodule Example2Web.FeedChannel do
 
   defp rate_limit_socket(socket) do
     # TODO (2a): You're going to mark the socket as rate limited, but you should also line up the removal of
-    # that rate limit for 5 seconds in the future. Do this by sending your `self` a message.
+    # that rate limit for 5 seconds in the future. Do this using `Process.send_after` to your `self` with a message.
 
     # TODO (1): The socket is being returned without modification. Leverage Channel state in order to
-    # mark this socket as rate limited
-    socket
+    # mark this socket as rate limited, with the key :rate_limited? set to true
   end
 end
