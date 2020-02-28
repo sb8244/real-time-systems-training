@@ -10,11 +10,11 @@
 
 In this section we will be exploring building a data pipeline using GenStage
 
-### 1.) Find the Genstage Components
+### 1.) Find the GenStage Components
 
 Follow the supervision tree from your main [application supervisor](/lib/example_1/application.ex) `application.ex`, and
-locate the GenStage components running in your process tree. Once you've found the code for the component, locate the
-processes running in the `:observer`
+locate the GenStage components running in your process tree (`lib/example_1/part2/supervisor.ex`). Once you've found the
+code for the component, locate the processes running in the `:observer`.
 
 ### 2.) Examine the GenStage
 
