@@ -43,8 +43,8 @@ defmodule Example2.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:statsd_logger, "~> 1.0.0"},
-      {:telemetry_metrics_statsd, "~> 0.2.0"},
+      {:statsd_logger, "~> 1.1"},
+      {:telemetry_metrics_statsd, "~> 0.3"},
     ]
   end
 
