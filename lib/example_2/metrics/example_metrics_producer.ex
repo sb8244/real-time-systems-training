@@ -1,6 +1,10 @@
 defmodule Example2.Metrics.ExampleMetricsProducer do
   def emit_simple do
-    :telemetry.execute([:example, :simple], %{}, %{})
+    :telemetry.execute(
+      [:example, :simple],
+      %{my_data: :foo},
+      %{my_metadata: :bar}
+    )
   end
 
   def example_event do

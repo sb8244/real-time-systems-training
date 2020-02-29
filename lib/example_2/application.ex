@@ -36,7 +36,7 @@ defmodule Example2.Application do
         "simple-event",
         [:example, :simple],
         &ExampleMetricsHandler.handle_simple/4,
-        %{}
+        %{my_config: :baz}
       )
   end
 end
