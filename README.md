@@ -1,4 +1,4 @@
-# Section 2 Example
+# Section 3 Example
 
 ## Getting Setup
 
